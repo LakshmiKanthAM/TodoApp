@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+
+<head>
+    <title>My Todo App</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <section class="main-container" ng-controller="todoController">
+        <h1>My Todo App </h1>
+        <form name="form" class="form" ng-submit="addTodo()">
+            <label>Name</label>
+            <input type="text" placeholder="Name" class="todoinput" ng-model="todoItem" required>
+            <button >Add</button>
+            <ul>
+                <li ng-repeat="todo in todos">
+                    <input ng-model="todo.done" type="checkbox">
+                    <span ng-class="{'done':todo.done}">
+                		{{todo.title}}
+                	</span>
+                </li>
+            </ul>
+        </form>
+        <label>Total Items-{{todos.length}}</label>
+        <br/>
+        <br/>
+        <button ng-click="selectAll()" >SelectAll</button>
+        <button ng-click="clearTodo()" >Clear</button>
+        <button ng-click="clearAll()" >ClearAll</button>
+        <br/>
+        <button ng-click="show()" >Show</button>
+        <button ng-click="hide()" >Hide</button>
+
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
+    </script>
+    <script src="js/todo.js"></script>
+</body>
+
+</html>
