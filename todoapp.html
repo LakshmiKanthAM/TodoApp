@@ -15,7 +15,7 @@
             <button >Add</button>
             <ul>
                 <li ng-repeat="todo in todos">
-                    <input ng-model="todo.done" type="checkbox">
+                    <input ng-model="todo.done" type="checkbox" ng-click="checked()">
                     <span ng-class="{'done':todo.done}">
                 		{{todo.title}}
                 	</span>
@@ -29,9 +29,6 @@
         <button ng-click="clearTodo()" >Clear</button>
         <button ng-click="clearAll()" >ClearAll</button>
         <br/>
-        <button ng-click="show()" >Show</button>
-        <button ng-click="hide()" >Hide</button>
-
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
     </script>

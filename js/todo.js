@@ -4,6 +4,9 @@ todo.controller('todoController', ['$scope', function($scope) {
         'title': 'my first task',
         'done': false
     }];
+    $scope.totalitems=0;
+    $scope.remainingitems=0;
+    $scope.selecteditems=0;
 
     $scope.addTodo = function() {
         $scope.todos.push({
@@ -37,12 +40,5 @@ todo.controller('todoController', ['$scope', function($scope) {
                     item.done=false;
                 });
             }
-    }
-    $scope.hide=function(){
-        $scope.todos.forEach(function loop(item){
-            if(!item.done){
-                item.title.style.display="none";
-            }
-        })
     }
 }]);
